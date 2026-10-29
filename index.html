@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b15">
+  <base href="./">
+  <meta name="description" content="MYTHOS — yapay zekâ destekli koleksiyon ve macera evreni">
+  <title>MYTHOS — Kayıp Hanedanın Uyanışı</title>
+  <link rel="preconnect" href="https://telegram.org">
+  <link rel="stylesheet" href="assets/app.css?v=1.0.0">
+  <script src="https://telegram.org/js/telegram-web-app.js?64"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div style="max-width:1240px;margin:10px auto 0;padding:8px 12px;border:1px solid #2d5c89;border-radius:10px;background:#0a1830;color:#b9dfff;font-size:12px;display:flex;gap:8px;align-items:center;justify-content:space-between"><span>DEMO MODU · Bu tarayıcıda kayıt tutar. Gerçek Stars ödemesi veya çevrimiçi çok oyunculu oyun yoktur.</span><button id="reset-demo" style="background:#142947;border:1px solid #37618b;color:#d9ecff;border-radius:7px;padding:5px 8px;cursor:pointer">Demoyu sıfırla</button></div>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-action="navigate" data-tab="home" aria-label="MYTHOS ana sayfa">
+        <span class="brand-mark">✦</span><span><strong>MYTHOS</strong><small>KAYIP HANEDANIN UYANIŞI</small></span>
+      </button>
+      <div class="top-user">
+        <div class="currency-pill"><span class="coin">◉</span><span id="user-gold">100</span><small>ALTIN</small></div>
+        <button class="user-chip" data-action="navigate" data-tab="character"><span id="user-avatar" class="avatar-mini">✦</span><span id="user-name">Gezgin</span><span class="chevron">⌄</span></button>
+      </div>
+    </header>
+    <nav class="main-nav" id="main-nav" aria-label="Ana menü">
+      <button class="nav-item active" data-action="navigate" data-tab="home"><span>⌂</span> Keşfet</button>
+      <button class="nav-item" data-action="navigate" data-tab="character"><span>♙</span> Karakter</button>
+      <button class="nav-item" data-action="navigate" data-tab="quests"><span>⚑</span> Görevler</button>
+      <button class="nav-item" data-action="navigate" data-tab="collection"><span>▧</span> Koleksiyon</button>
+      <button class="nav-item" data-action="navigate" data-tab="inventory"><span>▤</span> Envanter</button>
+      <button class="nav-item" data-action="navigate" data-tab="shop"><span>✧</span> Mağaza</button>
+      <button class="nav-item" data-action="navigate" data-tab="market"><span>⇄</span> Pazar</button>
+    </nav>
+    <main id="screen" class="screen" aria-live="polite">
+      <div class="loading-state"><div class="loading-sigil">✦</div><p>MYTHOS evreni hazırlanıyor…</p></div>
+    </main>
+    <footer class="app-footer"><span>MYTHOS <b>◆</b> v1.0</span><span>Bir efsane, seçimlerinle başlar.</span><button data-action="terms">Koşullar & destek</button></footer>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <script src="assets/mock-api.js?v=1.0.0"></script>
+  <script src="assets/app.js?v=1.0.0"></script>
+  <script>document.getElementById("reset-demo")?.addEventListener("click",()=>{if(confirm("Bu tarayıcıdaki MYTHOS demo kaydını sıfırlayalım mı?"))window.MYTHOS_DEMO?.reset();});</script>
+</body>
+</html>
